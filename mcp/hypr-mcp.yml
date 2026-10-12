@@ -1,0 +1,214 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/hypr-passwordless-openapi.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.hypr.com, www.hypr.com, apidocs.hypr.com, docs.hypr.com; verdict
+  opaque (https://www.hypr.com/mcp answered 403: the edge authenticates before it routes, which proves nothing either way). Candidate tools below
+  are derived from the 283 operation(s) in the provider''s own OpenAPI (40 listed); they describe what a server WOULD expose, not one that exists.'
+tools:
+- name: get_cc_api_versioned_serverconfig_proxy_retrieve_proxy_serve
+  operationId: get-cc-api-versioned-serverconfig-proxy-retrieve-proxy-server-settings
+  method: GET
+  path: /cc/api/versioned/serverconfig/proxy
+  description: Retrieve proxy server settings.
+- name: put_cc_api_versioned_serverconfig_proxy_update_proxy_server_
+  operationId: put-cc-api-versioned-serverconfig-proxy-update-proxy-server-settings
+  method: PUT
+  path: /cc/api/versioned/serverconfig/proxy
+  description: Update proxy server settings.
+- name: post_cc_api_versioned_serverconfig_proxy_verify_test_proxy_s
+  operationId: post-cc-api-versioned-serverconfig-proxy-verify-test-proxy-server-settings
+  method: POST
+  path: /cc/api/versioned/serverconfig/proxy/verify
+  description: Test proxy server settings.
+- name: get_rp_api_domaincertificate_list_all_domain_certificates
+  operationId: get-rp-api-domaincertificate-list-all-domain-certificates
+  method: GET
+  path: /rp/api/domaincertificate
+  description: List all domain certificates.
+- name: post_rp_api_domaincertificate_save_a_domain_certificate
+  operationId: post-rp-api-domaincertificate-save-a-domain-certificate
+  method: POST
+  path: /rp/api/domaincertificate
+  description: Save a domain certificate.
+- name: delete_rp_api_domaincertificate_delete_a_domain_certificate
+  operationId: delete-rp-api-domaincertificate-delete-a-domain-certificate
+  method: DELETE
+  path: /rp/api/domaincertificate
+  description: Delete a domain certificate.
+- name: get_cc_api_integrations_adapt_eventhandler_list_all_event_ha
+  operationId: get-cc-api-integrations-adapt-eventhandler-list-all-event-handlers-for-the-tenant
+  method: GET
+  path: /cc/api/integrations/adapt/eventhandler
+  description: List all Event handlers for the tenant.
+- name: post_cc_api_integrations_adapt_eventhandler_create_a_new_eve
+  operationId: post-cc-api-integrations-adapt-eventhandler-create-a-new-event-handler-for-the-tenant
+  method: POST
+  path: /cc/api/integrations/adapt/eventhandler
+  description: Create a new Event Handler for the tenant.
+- name: patch_cc_api_integrations_adapt_eventhandler_update_an_event
+  operationId: patch-cc-api-integrations-adapt-eventhandler-update-an-event-handler-on-the-tenant
+  method: PATCH
+  path: /cc/api/integrations/adapt/eventhandler
+  description: Update an Event handler on the tenant.
+- name: delete_cc_api_integrations_adapt_eventhandler_delete_an_even
+  operationId: delete-cc-api-integrations-adapt-eventhandler-delete-an-event-handler
+  method: DELETE
+  path: /cc/api/integrations/adapt/eventhandler
+  description: Delete an Event handler.
+- name: get_cc_api_integrations_adapt_eventhandler_eventhandlerid_li
+  operationId: get-cc-api-integrations-adapt-eventhandler-eventhandlerid-list-all-event-handlers-for-the-tenant-and-handler-id
+  method: GET
+  path: /cc/api/integrations/adapt/eventhandler/{eventHandlerId}
+  description: List all Event handlers for the tenant and handler id.
+- name: get_cc_api_integrations_adapt_eventhandler_eventhandlerid_ve
+  operationId: get-cc-api-integrations-adapt-eventhandler-eventhandlerid-version-list-all-event-handlers-for-the-tenant-and-handler-id-
+  method: GET
+  path: /cc/api/integrations/adapt/eventhandler/{eventHandlerId}/{version}
+  description: List all Event handlers for the tenant and handler id and version.
+- name: post_cc_api_integrations_adapt_events_test_test_a_handler_ev
+  operationId: post-cc-api-integrations-adapt-events-test-test-a-handler-event
+  method: POST
+  path: /cc/api/integrations/adapt/events/test
+  description: Test a handler Event.
+- name: post_cc_api_integrations_adapt_events_search_search_for_even
+  operationId: post-cc-api-integrations-adapt-events-search-search-for-events-by-entity-and-date-range
+  method: POST
+  path: /cc/api/integrations/adapt/events/search
+  description: Search for Events by entity and date range.
+- name: post_rp_api_signal_generic_source_eventname_entityidorname_g
+  operationId: post-rp-api-signal-generic-source-eventname-entityidorname-generic
+  method: POST
+  path: /rp/api/signal/generic/{source}/{eventName}/{entityIdOrName}
+  description: Generic
+- name: post_cc_api_integrations_adapt_policies_create_or_update_hyp
+  operationId: post-cc-api-integrations-adapt-policies-create-or-update-hypr-adapt-policies
+  method: POST
+  path: /cc/api/integrations/adapt/policies
+  description: Create or update HYPR Adapt policies.
+- name: get_cc_api_integrations_adapt_policies_get_all_hypr_adapt_po
+  operationId: get-cc-api-integrations-adapt-policies-get-all-hypr-adapt-policies-for-a-tenant
+  method: GET
+  path: /cc/api/integrations/adapt/policies
+  description: Get all HYPR Adapt policies for a tenant.
+- name: patch_cc_api_integrations_adapt_policies_update_a_custom_hyp
+  operationId: patch-cc-api-integrations-adapt-policies-update-a-custom-hypr-adapt-policy
+  method: PATCH
+  path: /cc/api/integrations/adapt/policies
+  description: Update a custom HYPR Adapt policy.
+- name: get_cc_api_integrations_adapt_policies_policyid_obtain_the_p
+  operationId: get-cc-api-integrations-adapt-policies-policyid-obtain-the-policy-by-policyid
+  method: GET
+  path: /cc/api/integrations/adapt/policies/{policyId}
+  description: Obtain the policy by policyId.
+- name: delete_cc_api_integrations_adapt_policies_policyid_delete_a_
+  operationId: delete-cc-api-integrations-adapt-policies-policyid-delete-a-hypr-adapt-policy
+  method: DELETE
+  path: /cc/api/integrations/adapt/policies/{policyId}
+  description: Delete a HYPR Adapt policy.
+- name: get_cc_api_integrations_adapt_policies_policyid_version_list
+  operationId: get-cc-api-integrations-adapt-policies-policyid-version-list-all-policies-by-policyid-and-version
+  method: GET
+  path: /cc/api/integrations/adapt/policies/{policyId}/{version}
+  description: List all policies by policyId and version.
+- name: post_cc_api_integrations_adapt_policies_policy_evaluation_ev
+  operationId: post-cc-api-integrations-adapt-policies-policy-evaluation-evaluate-an-adapt-risk-policy
+  method: POST
+  path: /cc/api/integrations/adapt/policies/policy_evaluation
+  description: Evaluate an Adapt Risk Policy.
+- name: post_cc_api_integrations_adapt_policies_policy_evaluation_te
+  operationId: post-cc-api-integrations-adapt-policies-policy-evaluation-test-test-an-adapt-policy-evaluation
+  method: POST
+  path: /cc/api/integrations/adapt/policies/policy_evaluation/test
+  description: Test an Adapt policy evaluation.
+- name: post_cc_api_integrations_adapt_user_allowlist_temporarily_al
+  operationId: post-cc-api-integrations-adapt-user-allowlist-temporarily-allowlist-a-user
+  method: POST
+  path: /cc/api/integrations/adapt/user/allowlist
+  description: Temporarily allowlist a user.
+- name: get_cc_api_appconfig_adapt_list_a_policy_configuration
+  operationId: get-cc-api-appconfig-adapt-list-a-policy-configuration
+  method: GET
+  path: /cc/api/appconfig/adapt
+  description: List a policy configuration.
+- name: put_cc_api_appconfig_adapt_assign_the_full_adapt_configurati
+  operationId: put-cc-api-appconfig-adapt-assign-the-full-adapt-configuration-to-an-rp-application
+  method: PUT
+  path: /cc/api/appconfig/adapt
+  description: Assign the full Adapt configuration to an RP Application.
+- name: get_cc_api_appconfig_adapt_assignments_get_policy_assignment
+  operationId: get-cc-api-appconfig-adapt-assignments-get-policy-assignments-for-all-apps
+  method: GET
+  path: /cc/api/appconfig/adapt/assignments
+  description: Get policy assignments for all apps.
+- name: post_cc_api_appconfig_adapt_assign_assign_a_policy_to_an_eva
+  operationId: post-cc-api-appconfig-adapt-assign-assign-a-policy-to-an-evaluation-point-for-an-rpappid
+  method: POST
+  path: /cc/api/appconfig/adapt/assign
+  description: Assign a policy to an evaluation point for an rpAppId.
+- name: delete_cc_api_appconfig_adapt_rpappid_delete_all_policy_assi
+  operationId: delete-cc-api-appconfig-adapt-rpappid-delete-all-policy-assignments-for-an-rp-application
+  method: DELETE
+  path: /cc/api/appconfig/adapt/{rpAppId}
+  description: Delete all policy assignments for an RP application.
+- name: get_cc_api_extension_list_all_list_all_extensions_running_on
+  operationId: get-cc-api-extension-list-all-list-all-extensions-running-on-the-server
+  method: GET
+  path: /cc/api/extension/list/all
+  description: List all extensions running on the server.
+- name: post_cc_api_extension_install_an_extensions_jar_file
+  operationId: post-cc-api-extension-install-an-extensions-jar-file
+  method: POST
+  path: /cc/api/extension
+  description: Install an extensions .jar file.
+- name: delete_cc_api_extensions_extensionid_delete_an_extension
+  operationId: delete-cc-api-extensions-extensionid-delete-an-extension
+  method: DELETE
+  path: /cc/api/extensions/{extensionId}
+  description: Delete an extension.
+- name: get_cc_api_support_allowed_list_allowed_hypr_support_emails
+  operationId: get-cc-api-support-allowed-list-allowed-hypr-support-emails
+  method: GET
+  path: /cc/api/support/allowed
+  description: List allowed HYPR Support emails.
+- name: post_cc_api_idv_verification_create_verification_flow
+  operationId: post-cc-api-idv-verification-create-verification-flow
+  method: POST
+  path: /cc/api/idv/verification
+  description: Create Verification Flow
+- name: get_cc_api_idv_verification_get_all_verification_flows_depre
+  operationId: get-cc-api-idv-verification-get-all-verification-flows-deprecated
+  method: GET
+  path: /cc/api/idv/verification
+  description: Get All Verification Flows (Deprecated)
+- name: patch_cc_api_idv_verification_update_verification_flow
+  operationId: patch-cc-api-idv-verification-update-verification-flow
+  method: PATCH
+  path: /cc/api/idv/verification
+  description: Update Verification Flow
+- name: post_cc_api_idv_verification_friction_create_verification_fl
+  operationId: post-cc-api-idv-verification-friction-create-verification-flow-with-friction-level
+  method: POST
+  path: /cc/api/idv/verification/friction
+  description: Create Verification Flow with Friction Level
+- name: delete_cc_api_idv_verification_verificationflowid_delete_ver
+  operationId: delete-cc-api-idv-verification-verificationflowid-delete-verification-flow
+  method: DELETE
+  path: /cc/api/idv/verification/{verificationFlowId}
+  description: Delete Verification Flow
+- name: get_cc_api_idv_verification_verificationflowid_get_verificat
+  operationId: get-cc-api-idv-verification-verificationflowid-get-verification-flow
+  method: GET
+  path: /cc/api/idv/verification/{verificationFlowId}
+  description: Get Verification Flow
+- name: get_cc_api_idv_verification_list_list_verification_flows
+  operationId: get-cc-api-idv-verification-list-list-verification-flows
+  method: GET
+  path: /cc/api/idv/verification/list
+  description: List Verification Flows

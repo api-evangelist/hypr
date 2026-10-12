@@ -1,0 +1,16 @@
+generated: '2026-10-13'
+method: none
+source:
+- https://zapier.com/apps/hypr/integrations
+- https://n8n.io/integrations/hypr/
+- https://composio.dev/toolkits/hypr
+- https://monid.ai/tools/hypr
+checked:
+- https://composio.dev/toolkits/hypr
+- https://monid.ai/tools/hypr
+- https://n8n.io/integrations/hypr/
+- https://zapier.com/apps/hypr/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []

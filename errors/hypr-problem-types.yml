@@ -1,0 +1,19 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/_ae-authored/hypr-passwordless-openapi.yml
+format: custom
+envelope:
+  media_type: null
+  schema: null
+coverage:
+  operations: 290
+  statuses_declared: 1
+problems:
+- status: default
+  title: null
+  description: See HYPR API documentation
+  operations: 290
+  media_types: []
+  schema: null

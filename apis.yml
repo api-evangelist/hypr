@@ -1,23 +1,125 @@
 aid: hypr
+
 name: HYPR
-description: 'HYPR is a company surfaced via the API Evangelist harvest backlog (source: market-layer-gap)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://www.hypr.com/hubfs/Company/HYPR-general-tile.jpg
+
+description: HYPR is a passwordless identity assurance company. Its Passwordless REST APIs, served from each customer's own HYPR Server, cover device registration, authentication, user management, RP application
+  configuration, audit trail and administration.
+
 url: https://raw.githubusercontent.com/api-evangelist/hypr/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:market-layer-gap
+
 x-tier: stub
+
 x-tier-reason: harvest
+
 specificationVersion: '0.20'
+
 created: '2026-10-13'
+
 modified: '2026-10-13'
+
 tags:
 - Company
-apis: []
+- Identity
+- Passwordless
+- Authentication
+- FIDO
+- Security
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Spectral
+  url: rules/hypr-rules.yml
+- type: Security
+  url: security/hypr-vulnerability-disclosure.yml
+- type: ErrorCatalog
+  url: errors/hypr-problem-types.yml
+- type: Conformance
+  url: conformance/hypr-conformance.yml
+- type: SecurityTxt
+  url: well-known/hypr-status-security.txt
+- type: WellKnown
+  url: well-known/hypr-well-known.yml
+- type: Hosts
+  url: hosts/hypr-hosts.yml
+- type: Vendors
+  url: vendors/hypr-vendors.yml
+- type: TrustCenter
+  url: security/hypr-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/hypr-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/hypr-domain-security.yml
 - type: Website
   url: https://www.hypr.com
+- type: Postman
+  url: https://apidocs.hypr.com
+- type: APIReference
+  url: https://apidocs.hypr.com
+- type: Blog
+  url: https://www.hypr.com/blog
+- type: DeveloperPortal
+  url: https://portal.hypr.com/
+- type: Documentation
+  url: https://docs.hypr.com
+- type: GettingStarted
+  url: https://get.hypr.com/getting-started
+- type: Newsroom
+  url: https://www.hypr.com/company/newsroom
+- type: Pricing
+  url: https://www.hypr.com/pricing
+- type: PrivacyPolicy
+  url: https://www.hypr.com/privacy-policy/
+- type: SDKs
+  url: https://www.hypr.com/platform/sdk
+- type: StatusPage
+  url: https://status.hypr.com
+- type: Support
+  url: https://support.hypr.com/s/
+- type: TermsOfService
+  url: https://www.hypr.com/trust-center/terms-of-service
+
+apis:
+- aid: hypr:hypr-passwordless-apis
+  name: HYPR Passwordless APIs
+  description: REST APIs for registrations, authentication, user management, RP applications, audit trail and administration on a HYPR Server.
+  humanURL: https://apidocs.hypr.com
+  baseURL: https://{tenant}.hypr.com
+  tags:
+  - Passwordless
+  - Authentication
+  - Identity
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/hypr-passwordless-openapi.yml
+    x-ae-authored: true
+  - type: Postman
+    url: postman/hypr-passwordless-apis-postman-collection.json
+  - type: APIReference
+    url: https://apidocs.hypr.com
+
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-10-13'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: >-
+    the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://www.hypr.com/mcp
+    status: 403
+  - url: https://get.hypr.com/mcp
+    status: 403
+  - url: https://www.hypr.com
+    status: 200

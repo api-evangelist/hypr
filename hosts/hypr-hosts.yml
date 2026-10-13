@@ -125,6 +125,7 @@ hosts:
   - probed
   - contract-discovery
   - well-known
+  - vendor-detect
   types:
   - Website
   - Blog
@@ -133,7 +134,10 @@ hosts:
   - PrivacyPolicy
   - SDKs
   - TermsOfService
-  serves: []
+  serves:
+  - cdn
+  - hosting
+  vendor: cloudflare
   registrable_domain: hypr.com
   role: website
   relation: own

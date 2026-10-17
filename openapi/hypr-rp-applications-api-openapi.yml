@@ -1,0 +1,1851 @@
+openapi: 3.2.0
+info:
+  title: HYPR Passwordless RP Applications API
+  version: latest
+  description: 'AE-AUTHORED: derived mechanically from HYPR''s published Postman collection (https://apidocs.hypr.com, documenter collection 20355028/2sA3kPqQAt). Not published by HYPR as OpenAPI. Paths, methods and summaries only; schemas are not asserted.'
+  x-ae-authored: true
+  x-method: derived
+  x-source: postman/hypr-passwordless-apis-postman-collection.json
+servers:
+- url: https://{tenant}.hypr.com
+  variables:
+    tenant:
+      default: your-tenant
+security:
+- bearerAuth: []
+tags:
+- name: RP Applications
+paths:
+  /cc/api/authenticator/disable:
+    put:
+      summary: Disable authenticator
+      operationId: put-cc-api-authenticator-disable-disable-authenticator
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/authenticator/enable:
+    put:
+      summary: Enable authenticator
+      operationId: put-cc-api-authenticator-enable-enable-authenticator
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/action:
+    get:
+      summary: Retrieve authentication policies
+      operationId: get-cc-api-action-retrieve-authentication-policies
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+    put:
+      summary: Create or update an authentication policy
+      operationId: put-cc-api-action-create-or-update-an-authentication-policy
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/action/delete:
+    post:
+      summary: Delete an authentication policy
+      operationId: post-cc-api-action-delete-delete-an-authentication-policy
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/alias/{appId}/{username}:
+    patch:
+      summary: Assign user alias
+      operationId: patch-rp-api-alias-appid-username-assign-user-alias
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: appId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/username/{username}/alias:
+    get:
+      summary: Retrieve aliases for a user
+      operationId: get-rp-api-username-username-alias-retrieve-aliases-for-a-user
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete user aliases
+      operationId: delete-rp-api-username-username-alias-delete-user-aliases
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/username:
+    get:
+      summary: Get username by alias
+      operationId: get-rp-api-username-get-username-by-alias
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/username/{username}/email:
+    patch:
+      summary: Assign user email
+      operationId: patch-rp-api-username-username-email-assign-user-email
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      summary: GET the email addresses for a user
+      operationId: get-rp-api-username-username-email-get-the-email-addresses-for-a-user
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete user emails
+      operationId: delete-rp-api-username-username-email-delete-user-emails
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/versioned/recoverypin/retrieve:
+    post:
+      summary: Reveals a single recovery PIN and removes it from the database
+      operationId: post-rp-api-versioned-recoverypin-retrieve-reveals-a-single-recovery-pin-and-removes-it-from-the-database
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/user/lock:
+    put:
+      summary: Lock the authenticator for the user
+      operationId: put-cc-api-user-lock-lock-the-authenticator-for-the-user
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/user/unlock:
+    put:
+      summary: Unlock the authenticator for the user
+      operationId: put-cc-api-user-unlock-unlock-the-authenticator-for-the-user
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/versioned/rpUser/:
+    get:
+      summary: Get users
+      operationId: get-cc-api-versioned-rpuser-get-users
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/versioned/rpUser/{username}:
+    get:
+      summary: Get user details
+      operationId: get-cc-api-versioned-rpuser-username-get-user-details
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/rpUser:
+    post:
+      summary: Create RP application user
+      operationId: post-cc-api-rpuser-create-rp-application-user
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    put:
+      summary: Update RP application user
+      operationId: put-cc-api-rpuser-update-rp-application-user
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/rpUser/delete:
+    post:
+      summary: Delete RP application user
+      operationId: post-cc-api-rpuser-delete-delete-rp-application-user
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/versioned/audit/search:
+    get:
+      summary: Search for Audit Trail Events
+      operationId: get-cc-api-versioned-audit-search-search-for-audit-trail-events
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/audit/export:
+    post:
+      summary: Export Audit Trail Events
+      operationId: post-cc-api-audit-export-export-audit-trail-events
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/audit:
+    post:
+      summary: Log a Device Event
+      operationId: post-rp-deviceapi-audit-log-a-device-event
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/audit:
+    post:
+      summary: Log a Workstation Event
+      operationId: post-rp-wsapi-audit-log-a-workstation-event
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/oob/client/devices/{rpAppId}/{machineName}:
+    get:
+      summary: Get registered devices by machineName
+      operationId: get-rp-api-oob-client-devices-rpappid-machinename-get-registered-devices-by-machinename
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: machineName
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/oob/client/{username}/devices:
+    get:
+      summary: GET all devices by username
+      operationId: get-rp-api-oob-client-username-devices-get-all-devices-by-username
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/oob/client/devices/{rpAppId}/{machineDisplayName}:
+    get:
+      summary: GET all the devices and users in an rpApp by machineDisplayName
+      operationId: get-rp-api-oob-client-devices-rpappid-machinedisplayname-get-all-the-devices-and-users-in-an-rpapp-by-machinedisplayname
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: machineDisplayName
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/oob/client/device/delete/{rpAppId}/{username}/{deviceId}:
+    post:
+      summary: Delete a device from an application user
+      operationId: post-rp-api-oob-client-device-delete-rpappid-username-deviceid-delete-a-device-from-an-application-user
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: deviceId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/oob/qr/client/authentication/requests:
+    post:
+      summary: QR authentication request
+      operationId: post-rp-api-oob-qr-client-authentication-requests-qr-authentication-request
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/oob/client/authentication/requests:
+    post:
+      summary: OOB authentication request
+      operationId: post-rp-api-oob-client-authentication-requests-oob-authentication-request
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/oob/client/authentication/requests/{requestId}:
+    get:
+      summary: OOB Authentication request status
+      operationId: get-rp-api-oob-client-authentication-requests-requestid-oob-authentication-request-status
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: requestId
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/oob/client/authentication/requests/transaction:
+    post:
+      summary: OOB authentication transaction request
+      operationId: post-rp-api-oob-client-authentication-requests-transaction-oob-authentication-transaction-request
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/device/query/ws/status:
+    post:
+      summary: Device queries the status of registered workstations
+      operationId: post-rp-deviceapi-device-query-ws-status-device-queries-the-status-of-registered-workstations
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/device/query/web/status/reg/confirm:
+    post:
+      summary: 'Single registration: Device confirms web account creation'
+      operationId: post-rp-deviceapi-device-query-web-status-reg-confirm-single-registration-device-confirms-web-account-creation
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/device/query/web/status/reg:
+    post:
+      summary: 'Single registration: Device checks for the created web account'
+      operationId: post-rp-deviceapi-device-query-web-status-reg-single-registration-device-checks-for-the-created-web-account
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/appconfig/device/{name}:
+    delete:
+      summary: Delete an application device
+      operationId: delete-cc-api-appconfig-device-name-delete-an-application-device
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/deviceapi/signal:
+    put:
+      summary: Send device location to the server
+      operationId: put-rp-deviceapi-signal-send-device-location-to-the-server
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/signal/device/{deviceId}:
+    get:
+      summary: Get the device signal location information
+      operationId: get-rp-api-signal-device-deviceid-get-the-device-signal-location-information
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: deviceId
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/deviceapi/device/authorize/ws/complete/{sessionId}:
+    post:
+      summary: Device completes authorization
+      operationId: post-rp-deviceapi-device-authorize-ws-complete-sessionid-device-completes-authorization
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/device/authorize/ws/cancel:
+    post:
+      summary: Device cancels authorization before user presence is verified
+      operationId: post-rp-deviceapi-device-authorize-ws-cancel-device-cancels-authorization-before-user-presence-is-verified
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/device/ws/lock:
+    post:
+      summary: Device submits workstation(s) for lock
+      operationId: post-rp-deviceapi-device-ws-lock-device-submits-workstation-s-for-lock
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/device/authorize/ws/unlock:
+    post:
+      summary: Windows unlock from a mobile device
+      operationId: post-rp-deviceapi-device-authorize-ws-unlock-windows-unlock-from-a-mobile-device
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/device/ws/deregister:
+    post:
+      summary: Device submits workstation(s) for deregistration
+      operationId: post-rp-deviceapi-device-ws-deregister-device-submits-workstation-s-for-deregistration
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/device/deregister:
+    post:
+      summary: Deregister a previous registration of the device from your browser
+      operationId: post-rp-deviceapi-device-deregister-deregister-a-previous-registration-of-the-device-from-your-browser
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/settings:
+    post:
+      summary: Synchronize SSL PINs across HYPR for a device
+      operationId: post-rp-deviceapi-settings-synchronize-ssl-pins-across-hypr-for-a-device
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/rpUser/deleteDevice:
+    delete:
+      summary: Delete an RP application user's device
+      operationId: delete-cc-api-rpuser-deletedevice-delete-an-rp-application-user-s-device
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/signal/browser:
+    put:
+      summary: Send browser fingerprint data to Control Center
+      operationId: put-rp-api-signal-browser-send-browser-fingerprint-data-to-control-center
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/signal/browser/{userName}&signal={signal}:
+    get:
+      summary: Obtain browser fingerprint
+      operationId: get-rp-api-signal-browser-username-signal-signal-obtain-browser-fingerprint
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: userName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: signal
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/application:
+    get:
+      summary: Retrieve all applications
+      operationId: get-cc-api-application-retrieve-all-applications
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+    post:
+      summary: Create an application
+      operationId: post-cc-api-application-create-an-application
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/application/{rpAppId}:
+    delete:
+      summary: Delete an application
+      operationId: delete-cc-api-application-rpappid-delete-an-application
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/certificate:
+    post:
+      summary: Submits encrypted workstation certificates
+      operationId: post-rp-api-certificate-submits-encrypted-workstation-certificates
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/certificate/requests:
+    get:
+      summary: List any pending certificate issue and revocation requests
+      operationId: get-rp-api-certificate-requests-list-any-pending-certificate-issue-and-revocation-requests
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/certificate/request:
+    post:
+      summary: Trigger or re-trigger a certificate enrollment
+      operationId: post-rp-api-certificate-request-trigger-or-re-trigger-a-certificate-enrollment
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/certificate/revoke:
+    post:
+      summary: Confirm the status of a certificate revocation request
+      operationId: post-rp-api-certificate-revoke-confirm-the-status-of-a-certificate-revocation-request
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/rpapp/{rpAppId}/certificate/deregistered:
+    get:
+      summary: Get deregistered certificates
+      operationId: get-rp-api-rpapp-rpappid-certificate-deregistered-get-deregistered-certificates
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/client/desktopsso/status/{challenge}:
+    get:
+      summary: Obtain the desktop-to-web SSO challenge status
+      operationId: get-rp-api-client-desktopsso-status-challenge-obtain-the-desktop-to-web-sso-challenge-status
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: challenge
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/client/desktopsso/session/status/{machineId}:
+    get:
+      summary: Check if the machine has a valid FIDO session
+      operationId: get-rp-api-client-desktopsso-session-status-machineid-check-if-the-machine-has-a-valid-fido-session
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: machineId
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/client/desktopsso/challenge:
+    post:
+      summary: Send a challenge for the desktop client to process
+      operationId: post-rp-api-client-desktopsso-challenge-send-a-challenge-for-the-desktop-client-to-process
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/desktopsso/complete:
+    post:
+      summary: Respond to a challenge for the HYPRspeed client
+      operationId: post-rp-wsapi-client-desktopsso-complete-respond-to-a-challenge-for-the-hyprspeed-client
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/client/reg/:
+    get:
+      summary: Client registration information
+      operationId: get-rp-api-client-reg-client-registration-information
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+    post:
+      summary: New client registration
+      operationId: post-rp-api-client-reg-new-client-registration
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/client/reg:
+    patch:
+      summary: Update client registration
+      operationId: patch-rp-api-client-reg-update-client-registration
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/reg:
+    get:
+      summary: 'Asynchronous Registration: HYPR Passwordless client polls for FIDO_SEND'
+      operationId: get-rp-wsapi-client-reg-asynchronous-registration-hypr-passwordless-client-polls-for-fido-send
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+    post:
+      summary: 'Asynchronous Registration: Initial client registration request'
+      operationId: post-rp-wsapi-client-reg-asynchronous-registration-initial-client-registration-request
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    patch:
+      summary: 'Asynchronous Registration: Update client certificates and PINs'
+      operationId: patch-rp-wsapi-client-reg-asynchronous-registration-update-client-certificates-and-pins
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/enroll:
+    post:
+      summary: 'Asynchronous Web Registration: Workstation initiates enrollment'
+      operationId: post-rp-wsapi-client-enroll-asynchronous-web-registration-workstation-initiates-enrollment
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/enroll/complete:
+    post:
+      summary: 'Asynchronous Web Registration: Workstation completes enrollment'
+      operationId: post-rp-wsapi-client-enroll-complete-asynchronous-web-registration-workstation-completes-enrollment
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/ws/query/device:
+    post:
+      summary: Retrieve the workstation's currently registered devices
+      operationId: post-rp-wsapi-ws-query-device-retrieve-the-workstation-s-currently-registered-devices
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/setup:
+    post:
+      summary: Client (website | workstation) setup
+      operationId: post-rp-wsapi-client-setup-client-website-workstation-setup
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/registrations:
+    post:
+      summary: Client (website | workstation) registration
+      operationId: post-rp-wsapi-client-registrations-client-website-workstation-registration
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/registrations/{sessionId}:
+    post:
+      summary: Client (website | workstation) registration complete
+      operationId: post-rp-wsapi-client-registrations-sessionid-client-website-workstation-registration-complete
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/versioned/client/qr/create:
+    post:
+      summary: Generate a QR code
+      operationId: post-rp-versioned-client-qr-create-generate-a-qr-code
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/reg/{sessionId}:
+    delete:
+      summary: Cancel a registration in progress
+      operationId: delete-rp-wsapi-client-reg-sessionid-cancel-a-registration-in-progress
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/client/reg/{sessionId}:
+    delete:
+      summary: Delete a client registration
+      operationId: delete-rp-api-client-reg-sessionid-delete-a-client-registration
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/wsapi/smartkey/enroll:
+    post:
+      summary: Enroll/re-enroll a security key
+      operationId: post-rp-wsapi-smartkey-enroll-enroll-re-enroll-a-security-key
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/smartkey/unenroll:
+    post:
+      summary: Unenroll a security key
+      operationId: post-rp-wsapi-smartkey-unenroll-unenroll-a-security-key
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/smartkey/checksettings:
+    post:
+      summary: Get the CC admin settings for a security key
+      operationId: post-rp-wsapi-smartkey-checksettings-get-the-cc-admin-settings-for-a-security-key
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/smartkey/updaterecoverypins:
+    post:
+      summary: Update security key recovery PINs
+      operationId: post-rp-wsapi-smartkey-updaterecoverypins-update-security-key-recovery-pins
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/securitykey/getpinreset:
+    post:
+      summary: Obtain the security key PUK value
+      operationId: post-cc-api-securitykey-getpinreset-obtain-the-security-key-puk-value
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/securitykey/updatepinreset:
+    post:
+      summary: Update the security key PUK value
+      operationId: post-cc-api-securitykey-updatepinreset-update-the-security-key-puk-value
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/securitykey/deletepinreset:
+    post:
+      summary: Delete the security key PUK value
+      operationId: post-cc-api-securitykey-deletepinreset-delete-the-security-key-puk-value
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/versioned/workstation/lock:
+    post:
+      summary: Lock the workstation
+      operationId: post-rp-api-versioned-workstation-lock-lock-the-workstation
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/lock/complete:
+    post:
+      summary: Workstation verifies that the lock request is complete
+      operationId: post-rp-wsapi-client-lock-complete-workstation-verifies-that-the-lock-request-is-complete
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/verification/complete/{sessionId}:
+    post:
+      summary: Workstation indicates user verification completion
+      operationId: post-rp-wsapi-client-verification-complete-sessionid-workstation-indicates-user-verification-completion
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/authorize/unlock:
+    post:
+      summary: Windows polls HYPR Mobile App for unlock
+      operationId: post-rp-wsapi-client-authorize-unlock-windows-polls-hypr-mobile-app-for-unlock
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/authorization/complete/{sessionId}:
+    post:
+      summary: Workstation indicates authentication is complete
+      operationId: post-rp-wsapi-client-authorization-complete-sessionid-workstation-indicates-authentication-is-complete
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: sessionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/cancel/complete:
+    post:
+      summary: Client confirms cancel processing
+      operationId: post-rp-wsapi-client-cancel-complete-client-confirms-cancel-processing
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/device/deregister:
+    post:
+      summary: Workstation de-registers a paired HYPR Mobile App
+      operationId: post-rp-wsapi-client-device-deregister-workstation-de-registers-a-paired-hypr-mobile-app
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/appconfig/workstation:
+    put:
+      summary: Update workstation settings
+      operationId: put-cc-api-appconfig-workstation-update-workstation-settings
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      summary: Retrieve workstation settings
+      operationId: get-cc-api-appconfig-workstation-retrieve-workstation-settings
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/wsapi/client/workstation/status:
+    post:
+      summary: The workstation calls this endpoint to report status
+      operationId: post-rp-wsapi-client-workstation-status-the-workstation-calls-this-endpoint-to-report-status
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/client/workstation/poll/{rpAppId}/{machineId}:
+    get:
+      summary: Long polling endpoint for the workstation to get messages
+      operationId: get-rp-wsapi-client-workstation-poll-rpappid-machineid-long-polling-endpoint-for-the-workstation-to-get-messages
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: machineId
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/wsapi/settings:
+    get:
+      summary: Synchronize SSL PINs across HYPR for a machine
+      operationId: get-rp-wsapi-settings-synchronize-ssl-pins-across-hypr-for-a-machine
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/wsapi/signal:
+    put:
+      summary: Get workstation signal information
+      operationId: put-rp-wsapi-signal-get-workstation-signal-information
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/token/endpoint/exchange/clientcredentials:
+    post:
+      summary: Create an OAuth Token from Credentials
+      operationId: post-rp-token-endpoint-exchange-clientcredentials-create-an-oauth-token-from-credentials
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/versioned/magiclink:
+    post:
+      summary: Create a Magic Link
+      operationId: post-rp-api-versioned-magiclink-create-a-magic-link
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      summary: Retrieve a Magic Link
+      operationId: get-rp-api-versioned-magiclink-retrieve-a-magic-link
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+    delete:
+      summary: Delete a Magic Link
+      operationId: delete-rp-api-versioned-magiclink-delete-a-magic-link
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/versioned/magiclink/multiple:
+    post:
+      summary: Create multiple Magic Links
+      operationId: post-rp-api-versioned-magiclink-multiple-create-multiple-magic-links
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/versioned/magiclink/register:
+    get:
+      summary: Get the registration data for a Magic Link
+      operationId: get-rp-versioned-magiclink-register-get-the-registration-data-for-a-magic-link
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/appconfig/push:
+    get:
+      summary: Get login settings
+      operationId: get-cc-api-appconfig-push-get-login-settings
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+    put:
+      summary: Save login settings
+      operationId: put-cc-api-appconfig-push-save-login-settings
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/fido/facet:
+    get:
+      summary: Retrieve trusted facets
+      operationId: get-cc-api-fido-facet-retrieve-trusted-facets
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+    put:
+      summary: Add a trusted facet
+      operationId: put-cc-api-fido-facet-add-a-trusted-facet
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    post:
+      summary: Add facetIDs to an RP application
+      operationId: post-cc-api-fido-facet-add-facetids-to-an-rp-application
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    delete:
+      summary: Delete a FIDO facetID
+      operationId: delete-cc-api-fido-facet-delete-a-fido-facetid
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/wsapi/fido2/listen:
+    post:
+      summary: Workstation listens for mobile device advertisements
+      operationId: post-rp-wsapi-fido2-listen-workstation-listens-for-mobile-device-advertisements
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/fido2/advertise:
+    post:
+      summary: Mobile device starts/stops advertising
+      operationId: post-rp-deviceapi-fido2-advertise-mobile-device-starts-stops-advertising
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/fido2/receive:
+    post:
+      summary: Workstation receives CTAP request from the the FIDO2 Gateway
+      operationId: post-rp-wsapi-fido2-receive-workstation-receives-ctap-request-from-the-the-fido2-gateway
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/fido2/receive:
+    post:
+      summary: Device receives CTAP request from the FIDO2 Gateway
+      operationId: post-rp-deviceapi-fido2-receive-device-receives-ctap-request-from-the-fido2-gateway
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /POST /rp/wsapi/fido2/send:
+    post:
+      summary: Workstation sends the CTAP request
+      operationId: post-post-rp-wsapi-fido2-send-workstation-sends-the-ctap-request
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /{bseUrl}/rp/deviceapi/fido2/send:
+    post:
+      summary: Mobile device sends CTAP response
+      operationId: post-bseurl-rp-deviceapi-fido2-send-mobile-device-sends-ctap-response
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: bseUrl
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/versioned/fido2/settings:
+    post:
+      summary: Save FIDO2/API application settings
+      operationId: post-rp-api-versioned-fido2-settings-save-fido2-api-application-settings
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      summary: Retrieve FIDO2/API application settings
+      operationId: get-rp-api-versioned-fido2-settings-retrieve-fido2-api-application-settings
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/fido2/authenticators/enable:
+    post:
+      summary: Enable one or more authenticators for a given RP application
+      operationId: post-rp-api-fido2-authenticators-enable-enable-one-or-more-authenticators-for-a-given-rp-application
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/fido2/authenticators:
+    get:
+      summary: List all known enabled FIDO2 authenticators
+      operationId: get-rp-api-fido2-authenticators-list-all-known-enabled-fido2-authenticators
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/fido2/authenticators/isenabled:
+    get:
+      summary: List all explicitly enabled FIDO2 authenticators
+      operationId: get-rp-api-fido2-authenticators-isenabled-list-all-explicitly-enabled-fido2-authenticators
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/fido2/authenticators/disablehard:
+    post:
+      summary: Disable authenticators and remove them from the whitelist
+      operationId: post-rp-api-fido2-authenticators-disablehard-disable-authenticators-and-remove-them-from-the-whitelist
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/fido2/authenticators/disable:
+    post:
+      summary: Disable one or more authenticators for a given RP application
+      operationId: post-rp-api-fido2-authenticators-disable-disable-one-or-more-authenticators-for-a-given-rp-application
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/fido2/policy:
+    get:
+      summary: Get a FIDO2 policy
+      operationId: get-cc-api-fido2-policy-get-a-fido2-policy
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+    put:
+      summary: Update a FIDO2 policy
+      operationId: put-cc-api-fido2-policy-update-a-fido2-policy
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/appconfig/oidc:
+    get:
+      summary: Get OIDC configuration
+      operationId: get-cc-api-appconfig-oidc-get-oidc-configuration
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+    put:
+      summary: Save OIDC configuration
+      operationId: put-cc-api-appconfig-oidc-save-oidc-configuration
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/appconfig/oidc/{rpAppId}:
+    delete:
+      summary: Delete OIDC configuration
+      operationId: delete-cc-api-appconfig-oidc-rpappid-delete-oidc-configuration
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idp/fido2/creationOptions/{rpAppId}/{upn}:
+    get:
+      summary: Get Entra ID user information
+      operationId: get-cc-api-idp-fido2-creationoptions-rpappid-upn-get-entra-id-user-information
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: upn
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idp/fido2/device/{rpAppId}/{upn}:
+    post:
+      summary: Update Entra ID user information
+      operationId: post-cc-api-idp-fido2-device-rpappid-upn-update-entra-id-user-information
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: upn
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/appconfig/devicemanager:
+    get:
+      summary: Get Device Manager configuration
+      operationId: get-cc-api-appconfig-devicemanager-get-device-manager-configuration
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+    put:
+      summary: Create or update Device Manager configuration
+      operationId: put-cc-api-appconfig-devicemanager-create-or-update-device-manager-configuration
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/appconfig/devicemanager/{rpAppId}:
+    delete:
+      summary: Delete Device Manager configuration
+      operationId: delete-cc-api-appconfig-devicemanager-rpappid-delete-device-manager-configuration
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/appconfig/device:
+    get:
+      summary: Get an application's Device Manager properties
+      operationId: get-cc-api-appconfig-device-get-an-application-s-device-manager-properties
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+    put:
+      summary: Save the application's Device Manager properties
+      operationId: put-cc-api-appconfig-device-save-the-application-s-device-manager-properties
+      tags:
+      - RP Applications
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

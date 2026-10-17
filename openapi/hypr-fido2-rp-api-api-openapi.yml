@@ -1,0 +1,197 @@
+openapi: 3.2.0
+info:
+  title: HYPR Passwordless FIDO2 RP API
+  version: latest
+  description: 'AE-AUTHORED: derived mechanically from HYPR''s published Postman collection (https://apidocs.hypr.com, documenter collection 20355028/2sA3kPqQAt). Not published by HYPR as OpenAPI. Paths, methods and summaries only; schemas are not asserted.'
+  x-ae-authored: true
+  x-method: derived
+  x-source: postman/hypr-passwordless-apis-postman-collection.json
+servers:
+- url: https://{tenant}.hypr.com
+  variables:
+    tenant:
+      default: your-tenant
+security:
+- bearerAuth: []
+tags:
+- name: FIDO2 RP API
+paths:
+  /rp/api/versioned/fido2/oob/status:
+    get:
+      summary: FIDO2 OOB Get the status of the request
+      operationId: get-rp-api-versioned-fido2-oob-status-fido2-oob-get-the-status-of-the-request
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/versioned/fido2/oob/register:
+    post:
+      summary: FIDO2 OOB Make a request to register a user
+      operationId: post-rp-api-versioned-fido2-oob-register-fido2-oob-make-a-request-to-register-a-user
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/versioned/fido2/oob/info:
+    get:
+      summary: FIDO2 OOB Get information on the request
+      operationId: get-rp-api-versioned-fido2-oob-info-fido2-oob-get-information-on-the-request
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/versioned/fido2/oob/cancel:
+    delete:
+      summary: FIDO2 OOB Cancel the request
+      operationId: delete-rp-api-versioned-fido2-oob-cancel-fido2-oob-cancel-the-request
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/versioned/fido2/oob/authenticate:
+    post:
+      summary: FIDO2 OOB Make a request to authenticate a user
+      operationId: post-rp-api-versioned-fido2-oob-authenticate-fido2-oob-make-a-request-to-authenticate-a-user
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/versioned/fido2/mds:
+    put:
+      summary: Update the downloaded FIDO2 MDS
+      operationId: put-rp-api-versioned-fido2-mds-update-the-downloaded-fido2-mds
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      summary: Get the current FIDO2 MDS
+      operationId: get-rp-api-versioned-fido2-mds-get-the-current-fido2-mds
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/versioned/fido2/mds/{aaguid}:
+    delete:
+      summary: Delete an AAGUID from the downloaded FIDO2 MDS
+      operationId: delete-rp-api-versioned-fido2-mds-aaguid-delete-an-aaguid-from-the-downloaded-fido2-mds
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: aaguid
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/versioned/fido2/attestation/options:
+    post:
+      summary: FIDO2/API Attestation Options
+      operationId: post-rp-api-versioned-fido2-attestation-options-fido2-api-attestation-options
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/versioned/fido2/attestation/result:
+    post:
+      summary: FIDO2/API Attestation Result
+      operationId: post-rp-api-versioned-fido2-attestation-result-fido2-api-attestation-result
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/versioned/fido2/assertion/options:
+    post:
+      summary: FIDO2/API Assertion Options
+      operationId: post-rp-api-versioned-fido2-assertion-options-fido2-api-assertion-options
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/versioned/fido2/assertion/result:
+    post:
+      summary: FIDO2/API Assertion Result
+      operationId: post-rp-api-versioned-fido2-assertion-result-fido2-api-assertion-result
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/versioned/fido2/user/status:
+    get:
+      summary: FIDO2/API User Status
+      operationId: get-rp-api-versioned-fido2-user-status-fido2-api-user-status
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/api/versioned/fido2/user:
+    get:
+      summary: FIDO2/API Devices
+      operationId: get-rp-api-versioned-fido2-user-fido2-api-devices
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+    delete:
+      summary: FIDO2/API Device
+      operationId: delete-rp-api-versioned-fido2-user-fido2-api-device
+      tags:
+      - FIDO2 RP API
+      responses:
+        default:
+          description: See HYPR API documentation
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

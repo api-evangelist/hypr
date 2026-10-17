@@ -1,0 +1,1598 @@
+openapi: 3.2.0
+info:
+  title: HYPR Passwordless Control Center API
+  version: latest
+  description: 'AE-AUTHORED: derived mechanically from HYPR''s published Postman collection (https://apidocs.hypr.com, documenter collection 20355028/2sA3kPqQAt). Not published by HYPR as OpenAPI. Paths, methods and summaries only; schemas are not asserted.'
+  x-ae-authored: true
+  x-method: derived
+  x-source: postman/hypr-passwordless-apis-postman-collection.json
+servers:
+- url: https://{tenant}.hypr.com
+  variables:
+    tenant:
+      default: your-tenant
+security:
+- bearerAuth: []
+tags:
+- name: Control Center
+paths:
+  /cc/api/versioned/serverconfig/proxy:
+    get:
+      summary: Retrieve proxy server settings
+      operationId: get-cc-api-versioned-serverconfig-proxy-retrieve-proxy-server-settings
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    put:
+      summary: Update proxy server settings
+      operationId: put-cc-api-versioned-serverconfig-proxy-update-proxy-server-settings
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/versioned/serverconfig/proxy/verify:
+    post:
+      summary: Test proxy server settings
+      operationId: post-cc-api-versioned-serverconfig-proxy-verify-test-proxy-server-settings
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/domaincertificate:
+    get:
+      summary: List all domain certificates
+      operationId: get-rp-api-domaincertificate-list-all-domain-certificates
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    post:
+      summary: Save a domain certificate
+      operationId: post-rp-api-domaincertificate-save-a-domain-certificate
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    delete:
+      summary: Delete a domain certificate
+      operationId: delete-rp-api-domaincertificate-delete-a-domain-certificate
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/integrations/adapt/eventhandler:
+    get:
+      summary: List all Event handlers for the tenant
+      operationId: get-cc-api-integrations-adapt-eventhandler-list-all-event-handlers-for-the-tenant
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    post:
+      summary: Create a new Event Handler for the tenant
+      operationId: post-cc-api-integrations-adapt-eventhandler-create-a-new-event-handler-for-the-tenant
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    patch:
+      summary: Update an Event handler on the tenant
+      operationId: patch-cc-api-integrations-adapt-eventhandler-update-an-event-handler-on-the-tenant
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    delete:
+      summary: Delete an Event handler
+      operationId: delete-cc-api-integrations-adapt-eventhandler-delete-an-event-handler
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/integrations/adapt/eventhandler/{eventHandlerId}:
+    get:
+      summary: List all Event handlers for the tenant and handler id
+      operationId: get-cc-api-integrations-adapt-eventhandler-eventhandlerid-list-all-event-handlers-for-the-tenant-and-handler-id
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: eventHandlerId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/integrations/adapt/eventhandler/{eventHandlerId}/{version}:
+    get:
+      summary: List all Event handlers for the tenant and handler id and version
+      operationId: get-cc-api-integrations-adapt-eventhandler-eventhandlerid-version-list-all-event-handlers-for-the-tenant-and-handler-id-
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: eventHandlerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/integrations/adapt/events/test:
+    post:
+      summary: Test a handler Event
+      operationId: post-cc-api-integrations-adapt-events-test-test-a-handler-event
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/integrations/adapt/events/search:
+    post:
+      summary: Search for Events by entity and date range
+      operationId: post-cc-api-integrations-adapt-events-search-search-for-events-by-entity-and-date-range
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/signal/generic/{source}/{eventName}/{entityIdOrName}:
+    post:
+      summary: Generic
+      operationId: post-rp-api-signal-generic-source-eventname-entityidorname-generic
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: source
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: eventName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: entityIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/integrations/adapt/policies:
+    post:
+      summary: Create or update HYPR Adapt policies
+      operationId: post-cc-api-integrations-adapt-policies-create-or-update-hypr-adapt-policies
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      summary: Get all HYPR Adapt policies for a tenant
+      operationId: get-cc-api-integrations-adapt-policies-get-all-hypr-adapt-policies-for-a-tenant
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    patch:
+      summary: Update a custom HYPR Adapt policy
+      operationId: patch-cc-api-integrations-adapt-policies-update-a-custom-hypr-adapt-policy
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/integrations/adapt/policies/{policyId}:
+    get:
+      summary: Obtain the policy by policyId
+      operationId: get-cc-api-integrations-adapt-policies-policyid-obtain-the-policy-by-policyid
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: policyId
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete a HYPR Adapt policy
+      operationId: delete-cc-api-integrations-adapt-policies-policyid-delete-a-hypr-adapt-policy
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: policyId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/integrations/adapt/policies/{policyId}/{version}:
+    get:
+      summary: List all policies by policyId and version
+      operationId: get-cc-api-integrations-adapt-policies-policyid-version-list-all-policies-by-policyid-and-version
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: policyId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: version
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/integrations/adapt/policies/policy_evaluation:
+    post:
+      summary: Evaluate an Adapt Risk Policy
+      operationId: post-cc-api-integrations-adapt-policies-policy-evaluation-evaluate-an-adapt-risk-policy
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/integrations/adapt/policies/policy_evaluation/test:
+    post:
+      summary: Test an Adapt policy evaluation
+      operationId: post-cc-api-integrations-adapt-policies-policy-evaluation-test-test-an-adapt-policy-evaluation
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/integrations/adapt/user/allowlist:
+    post:
+      summary: Temporarily allowlist a user
+      operationId: post-cc-api-integrations-adapt-user-allowlist-temporarily-allowlist-a-user
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/appconfig/adapt:
+    get:
+      summary: List a policy configuration
+      operationId: get-cc-api-appconfig-adapt-list-a-policy-configuration
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    put:
+      summary: Assign the full Adapt configuration to an RP Application
+      operationId: put-cc-api-appconfig-adapt-assign-the-full-adapt-configuration-to-an-rp-application
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/appconfig/adapt/assignments:
+    get:
+      summary: Get policy assignments for all apps
+      operationId: get-cc-api-appconfig-adapt-assignments-get-policy-assignments-for-all-apps
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/appconfig/adapt/assign:
+    post:
+      summary: Assign a policy to an evaluation point for an rpAppId
+      operationId: post-cc-api-appconfig-adapt-assign-assign-a-policy-to-an-evaluation-point-for-an-rpappid
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/appconfig/adapt/{rpAppId}:
+    delete:
+      summary: Delete all policy assignments for an RP application
+      operationId: delete-cc-api-appconfig-adapt-rpappid-delete-all-policy-assignments-for-an-rp-application
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/extension/list/all:
+    get:
+      summary: List all extensions running on the server
+      operationId: get-cc-api-extension-list-all-list-all-extensions-running-on-the-server
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/extension:
+    post:
+      summary: Install an extensions .jar file
+      operationId: post-cc-api-extension-install-an-extensions-jar-file
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/extensions/{extensionId}:
+    delete:
+      summary: Delete an extension
+      operationId: delete-cc-api-extensions-extensionid-delete-an-extension
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: extensionId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/support/allowed:
+    get:
+      summary: List allowed HYPR Support emails
+      operationId: get-cc-api-support-allowed-list-allowed-hypr-support-emails
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/idv/verification:
+    post:
+      summary: Create Verification Flow
+      operationId: post-cc-api-idv-verification-create-verification-flow
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      summary: Get All Verification Flows (Deprecated)
+      operationId: get-cc-api-idv-verification-get-all-verification-flows-deprecated
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    patch:
+      summary: Update Verification Flow
+      operationId: patch-cc-api-idv-verification-update-verification-flow
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/verification/friction:
+    post:
+      summary: Create Verification Flow with Friction Level
+      operationId: post-cc-api-idv-verification-friction-create-verification-flow-with-friction-level
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/verification/{verificationFlowId}:
+    delete:
+      summary: Delete Verification Flow
+      operationId: delete-cc-api-idv-verification-verificationflowid-delete-verification-flow
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: verificationFlowId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get Verification Flow
+      operationId: get-cc-api-idv-verification-verificationflowid-get-verification-flow
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: verificationFlowId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/verification/list:
+    get:
+      summary: List Verification Flows
+      operationId: get-cc-api-idv-verification-list-list-verification-flows
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/idv/user:
+    post:
+      summary: Create single user workflow
+      operationId: post-cc-api-idv-user-create-single-user-workflow
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/user/{workflowId}:
+    delete:
+      summary: Delete single user workflow
+      operationId: delete-cc-api-idv-user-workflowid-delete-single-user-workflow
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: workflowId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get single user workflow
+      operationId: get-cc-api-idv-user-workflowid-get-single-user-workflow
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: workflowId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/user/unblock:
+    post:
+      summary: Unblock user from workflow
+      operationId: post-cc-api-idv-user-unblock-unblock-user-from-workflow
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/workflow/{workflowId}:
+    get:
+      summary: Get workflow by ID
+      operationId: get-cc-api-idv-workflow-workflowid-get-workflow-by-id
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: workflowId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/workflow/{workflowId}/results:
+    get:
+      summary: Get workflow results
+      operationId: get-cc-api-idv-workflow-workflowid-results-get-workflow-results
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: workflowId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/code-customization:
+    post:
+      summary: Create Code Customization
+      operationId: post-cc-api-idv-code-customization-create-code-customization
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      summary: List All Code Customizations
+      operationId: get-cc-api-idv-code-customization-list-all-code-customizations
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/idv/code-customization/{codeCustomizationId}:
+    delete:
+      summary: Delete Code Customization
+      operationId: delete-cc-api-idv-code-customization-codecustomizationid-delete-code-customization
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: codeCustomizationId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get Code Customization by ID
+      operationId: get-cc-api-idv-code-customization-codecustomizationid-get-code-customization-by-id
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: codeCustomizationId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/code-customization/test:
+    post:
+      summary: Test Code Customization
+      operationId: post-cc-api-idv-code-customization-test-test-code-customization
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/code-customization/update:
+    post:
+      summary: Update Code Customization
+      operationId: post-cc-api-idv-code-customization-update-update-code-customization
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/content-customization:
+    post:
+      summary: Create Content Customization Kit
+      operationId: post-cc-api-idv-content-customization-create-content-customization-kit
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    delete:
+      summary: Delete All Content Customizations Kit
+      operationId: delete-cc-api-idv-content-customization-delete-all-content-customizations-kit
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    get:
+      summary: List All Content Customizations
+      operationId: get-cc-api-idv-content-customization-list-all-content-customizations
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/idv/content-customization/{contentCustomizationId}:
+    delete:
+      summary: Delete Content Customization Kit
+      operationId: delete-cc-api-idv-content-customization-contentcustomizationid-delete-content-customization-kit
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: contentCustomizationId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get Content Customization by ID
+      operationId: get-cc-api-idv-content-customization-contentcustomizationid-get-content-customization-by-id
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: contentCustomizationId
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Patch Content Customization Kit
+      operationId: patch-cc-api-idv-content-customization-contentcustomizationid-patch-content-customization-kit
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: contentCustomizationId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/content-customization/{contentCustomizationId}/duplicate:
+    put:
+      summary: Duplicate Content Customization Kit
+      operationId: put-cc-api-idv-content-customization-contentcustomizationid-duplicate-duplicate-content-customization-kit
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: contentCustomizationId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/content-customization/defaults:
+    get:
+      summary: Get Default Content Customization Kit
+      operationId: get-cc-api-idv-content-customization-defaults-get-default-content-customization-kit
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/idv/content-customization/defaults/style:
+    get:
+      summary: Get Content Customization Kit Styles
+      operationId: get-cc-api-idv-content-customization-defaults-style-get-content-customization-kit-styles
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/idv/content-customization/{contentCustomizationId}/screens/{screenName}:
+    get:
+      summary: Get Content Customization Kit Screen
+      operationId: get-cc-api-idv-content-customization-contentcustomizationid-screens-screenname-get-content-customization-kit-screen
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: contentCustomizationId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: screenName
+        in: path
+        required: true
+        schema:
+          type: string
+    put:
+      summary: Put Content Customization Kit Screen
+      operationId: put-cc-api-idv-content-customization-contentcustomizationid-screens-screenname-put-content-customization-kit-screen
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: contentCustomizationId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: screenName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/content-customization/{contentCustomizationId}/screens:
+    get:
+      summary: Get Content Customization Kit Screens
+      operationId: get-cc-api-idv-content-customization-contentcustomizationid-screens-get-content-customization-kit-screens
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: contentCustomizationId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/content-customization/{contentCustomizationId}/stylesheet:
+    get:
+      summary: Get Content Customization Kit Stylesheet
+      operationId: get-cc-api-idv-content-customization-contentcustomizationid-stylesheet-get-content-customization-kit-stylesheet
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: contentCustomizationId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/content-customization/{contentCustomizationId}/metadata:
+    patch:
+      summary: Patch Content Customization Kit Metadata
+      operationId: patch-cc-api-idv-content-customization-contentcustomizationid-metadata-patch-content-customization-kit-metadata
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: contentCustomizationId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/oidc:
+    post:
+      summary: Create OIDC Client Config
+      operationId: post-cc-api-idv-oidc-create-oidc-client-config
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      summary: List All OIDC Client Configs
+      operationId: get-cc-api-idv-oidc-list-all-oidc-client-configs
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    patch:
+      summary: Update OIDC Client Config
+      operationId: patch-cc-api-idv-oidc-update-oidc-client-config
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/oidc/{oidcConfigId}:
+    delete:
+      summary: Delete OIDC Client Config
+      operationId: delete-cc-api-idv-oidc-oidcconfigid-delete-oidc-client-config
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: oidcConfigId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get OIDC Client Config by ID
+      operationId: get-cc-api-idv-oidc-oidcconfigid-get-oidc-client-config-by-id
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: oidcConfigId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/results/activityLog:
+    get:
+      summary: List Activity Log
+      operationId: get-cc-api-idv-results-activitylog-list-activity-log
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/idv/helpdesk/workflows/{workflowId}:
+    get:
+      summary: Get Workflow by ID
+      operationId: get-cc-api-idv-helpdesk-workflows-workflowid-get-workflow-by-id
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: workflowId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/helpdesk/workflows:
+    get:
+      summary: List Workflows
+      operationId: get-cc-api-idv-helpdesk-workflows-list-workflows
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/idv/asset:
+    get:
+      summary: List All Assets
+      operationId: get-cc-api-idv-asset-list-all-assets
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    post:
+      summary: Create Asset
+      operationId: post-cc-api-idv-asset-create-asset
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    patch:
+      summary: Update Asset
+      operationId: patch-cc-api-idv-asset-update-asset
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/asset/{assetId}:
+    get:
+      summary: Get Asset by ID
+      operationId: get-cc-api-idv-asset-assetid-get-asset-by-id
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: assetId
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Asset
+      operationId: delete-cc-api-idv-asset-assetid-delete-asset
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: assetId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/policy-evaluation-kits/defaults:
+    get:
+      summary: Get Default Policy Evaluation Kit
+      operationId: get-cc-api-idv-policy-evaluation-kits-defaults-get-default-policy-evaluation-kit
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/idv/policy-evaluation-kits/risk-signals:
+    get:
+      summary: Get Risk Signals
+      operationId: get-cc-api-idv-policy-evaluation-kits-risk-signals-get-risk-signals
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/idv/policy-evaluation-kits/risk-signals/{actionName}:
+    get:
+      summary: Get Risk Signals for Action
+      operationId: get-cc-api-idv-policy-evaluation-kits-risk-signals-actionname-get-risk-signals-for-action
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: actionName
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/policy-evaluation-kits:
+    get:
+      summary: List Policy Evaluation Kits
+      operationId: get-cc-api-idv-policy-evaluation-kits-list-policy-evaluation-kits
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    post:
+      summary: Create Policy Evaluation Kit
+      operationId: post-cc-api-idv-policy-evaluation-kits-create-policy-evaluation-kit
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    delete:
+      summary: Delete All Policy Evaluation Kits
+      operationId: delete-cc-api-idv-policy-evaluation-kits-delete-all-policy-evaluation-kits
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/idv/policy-evaluation-kits/{kitId}:
+    get:
+      summary: Get Policy Evaluation Kit by ID
+      operationId: get-cc-api-idv-policy-evaluation-kits-kitid-get-policy-evaluation-kit-by-id
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: kitId
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Update Policy Evaluation Kit
+      operationId: patch-cc-api-idv-policy-evaluation-kits-kitid-update-policy-evaluation-kit
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: kitId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    delete:
+      summary: Delete Policy Evaluation Kit
+      operationId: delete-cc-api-idv-policy-evaluation-kits-kitid-delete-policy-evaluation-kit
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: kitId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/policy-evaluation-kits/{kitId}/duplicate:
+    put:
+      summary: Duplicate Policy Evaluation Kit
+      operationId: put-cc-api-idv-policy-evaluation-kits-kitid-duplicate-duplicate-policy-evaluation-kit
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: kitId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/policy-ledger/{workflowId}:
+    get:
+      summary: Get Policy Ledger for Workflow
+      operationId: get-cc-api-idv-policy-ledger-workflowid-get-policy-ledger-for-workflow
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: workflowId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/known-location:
+    get:
+      summary: List Known Locations
+      operationId: get-cc-api-idv-known-location-list-known-locations
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    post:
+      summary: Create Known Location
+      operationId: post-cc-api-idv-known-location-create-known-location
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    patch:
+      summary: Update Known Location
+      operationId: patch-cc-api-idv-known-location-update-known-location
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/known-location/{locationId}:
+    delete:
+      summary: Delete Known Location
+      operationId: delete-cc-api-idv-known-location-locationid-delete-known-location
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/idv/location/blocked-countries:
+    get:
+      summary: List Country Block Lists
+      operationId: get-cc-api-idv-location-blocked-countries-list-country-block-lists
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    post:
+      summary: Create Country Block List
+      operationId: post-cc-api-idv-location-blocked-countries-create-country-block-list
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    patch:
+      summary: Update Country Block List
+      operationId: patch-cc-api-idv-location-blocked-countries-update-country-block-list
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/location/blocked-countries/sanctioned:
+    post:
+      summary: Create Sanctioned Country List
+      operationId: post-cc-api-idv-location-blocked-countries-sanctioned-create-sanctioned-country-list
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/idv/location/blocked-countries/{blockListId}:
+    delete:
+      summary: Delete Country Block List
+      operationId: delete-cc-api-idv-location-blocked-countries-blocklistid-delete-country-block-list
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: blockListId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/bulk/fetch:
+    post:
+      summary: Fetch activity log
+      operationId: post-cc-api-bulk-fetch-fetch-activity-log
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/email/customizations:
+    post:
+      summary: Create Email Template
+      operationId: post-cc-api-email-customizations-create-email-template
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+    get:
+      summary: Get Email Templates
+      operationId: get-cc-api-email-customizations-get-email-templates
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    patch:
+      summary: Update Email Template
+      operationId: patch-cc-api-email-customizations-update-email-template
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/email/customizations/{templateId}:
+    delete:
+      summary: Delete Email Template
+      operationId: delete-cc-api-email-customizations-templateid-delete-email-template
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/email/customizations/{templateId}/version:
+    post:
+      summary: Create Email Template Version
+      operationId: post-cc-api-email-customizations-templateid-version-create-email-template-version
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/email/customizations/{templateId}/version/{versionId}:
+    get:
+      summary: Get Email Template Version
+      operationId: get-cc-api-email-customizations-templateid-version-versionid-get-email-template-version
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete Email Template Version
+      operationId: delete-cc-api-email-customizations-templateid-version-versionid-delete-email-template-version
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/email/customizations/version:
+    patch:
+      summary: Update Email Template Version
+      operationId: patch-cc-api-email-customizations-version-update-email-template-version
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/email/customizations/{templateId}/version/{versionId}/clone:
+    post:
+      summary: Clone Email Template Version
+      operationId: post-cc-api-email-customizations-templateid-version-versionid-clone-clone-email-template-version
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/email/customizations/preview:
+    post:
+      summary: Preview Email
+      operationId: post-cc-api-email-customizations-preview-preview-email
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/email/customizations/test:
+    post:
+      summary: Test Email
+      operationId: post-cc-api-email-customizations-test-test-email
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/email/customization/{templateId}/version/{versionId}/revisions:
+    get:
+      summary: Get Email Template Version Revisions
+      operationId: get-cc-api-email-customization-templateid-version-versionid-revisions-get-email-template-version-revisions
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: versionId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/email/customization/revision/{revisionId}:
+    get:
+      summary: Get Single Revision Details
+      operationId: get-cc-api-email-customization-revision-revisionid-get-single-revision-details
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: revisionId
+        in: path
+        required: true
+        schema:
+          type: string
+  /cc/api/email/notificationTypes:
+    get:
+      summary: Get Notification Types
+      operationId: get-cc-api-email-notificationtypes-get-notification-types
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/appconfig/email/notification:
+    get:
+      summary: Get Notification Type Assignments
+      operationId: get-cc-api-appconfig-email-notification-get-notification-type-assignments
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+    post:
+      summary: Set Notification Type Assignment
+      operationId: post-cc-api-appconfig-email-notification-set-notification-type-assignment
+      tags:
+      - Control Center
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

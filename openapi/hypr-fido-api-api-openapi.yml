@@ -1,0 +1,65 @@
+openapi: 3.2.0
+info:
+  title: HYPR Passwordless FIDO API
+  version: latest
+  description: 'AE-AUTHORED: derived mechanically from HYPR''s published Postman collection (https://apidocs.hypr.com, documenter collection 20355028/2sA3kPqQAt). Not published by HYPR as OpenAPI. Paths, methods and summaries only; schemas are not asserted.'
+  x-ae-authored: true
+  x-method: derived
+  x-source: postman/hypr-passwordless-apis-postman-collection.json
+servers:
+- url: https://{tenant}.hypr.com
+  variables:
+    tenant:
+      default: your-tenant
+security:
+- bearerAuth: []
+tags:
+- name: FIDO API
+paths:
+  /rp/fido/get:
+    post:
+      summary: Start FIDO registration, authentication, or deregistration
+      operationId: post-rp-fido-get-start-fido-registration-authentication-or-deregistration
+      tags:
+      - FIDO API
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/fido/send/reg:
+    post:
+      summary: Finish FIDO registration
+      operationId: post-rp-fido-send-reg-finish-fido-registration
+      tags:
+      - FIDO API
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/fido/send/auth:
+    post:
+      summary: Finish FIDO authentication
+      operationId: post-rp-fido-send-auth-finish-fido-authentication
+      tags:
+      - FIDO API
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

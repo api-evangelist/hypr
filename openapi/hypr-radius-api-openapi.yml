@@ -1,0 +1,220 @@
+openapi: 3.2.0
+info:
+  title: HYPR Passwordless RADIUS API
+  version: latest
+  description: 'AE-AUTHORED: derived mechanically from HYPR''s published Postman collection (https://apidocs.hypr.com, documenter collection 20355028/2sA3kPqQAt). Not published by HYPR as OpenAPI. Paths, methods and summaries only; schemas are not asserted.'
+  x-ae-authored: true
+  x-method: derived
+  x-source: postman/hypr-passwordless-apis-postman-collection.json
+servers:
+- url: https://{tenant}.hypr.com
+  variables:
+    tenant:
+      default: your-tenant
+security:
+- bearerAuth: []
+tags:
+- name: RADIUS
+paths:
+  /rp/api/radius/{rpAppId}/servers/{radiusServerId}/status:
+    get:
+      summary: Get current status/stats RADIUS for specific RADIUS server
+      operationId: get-rp-api-radius-rpappid-servers-radiusserverid-status-get-current-status-stats-radius-for-specific-radius-server
+      tags:
+      - RADIUS
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: radiusServerId
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/radius/{rpAppId}/servers/{radiusServerId}/configs/applied:
+    get:
+      summary: Get current actual (applied) RADIUS server configuration
+      operationId: get-rp-api-radius-rpappid-servers-radiusserverid-configs-applied-get-current-actual-applied-radius-server-configuration
+      tags:
+      - RADIUS
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: radiusServerId
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/radius/{rpAppId}/servers/{radiusServerId}:
+    get:
+      summary: Get configuration for a specific RADIUS server
+      operationId: get-rp-api-radius-rpappid-servers-radiusserverid-get-configuration-for-a-specific-radius-server
+      tags:
+      - RADIUS
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: radiusServerId
+        in: path
+        required: true
+        schema:
+          type: string
+  /rp/api/radius/{rpAppId}/servers/{radiusServerId}/notify/status:
+    post:
+      summary: Notify CC RADIUS status/stats
+      operationId: post-rp-api-radius-rpappid-servers-radiusserverid-notify-status-notify-cc-radius-status-stats
+      tags:
+      - RADIUS
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: radiusServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/radius/{rpAppId}/servers/{radiusServerId}/notify/configs/valid:
+    post:
+      summary: Notify CC that RADIUS configuration is valid
+      operationId: post-rp-api-radius-rpappid-servers-radiusserverid-notify-configs-valid-notify-cc-that-radius-configuration-is-valid
+      tags:
+      - RADIUS
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: radiusServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/radius/{rpAppId}/servers/{radiusServerId}/notify/config/invalid:
+    post:
+      summary: Notify CC that RADIUS configuration is invalid
+      operationId: post-rp-api-radius-rpappid-servers-radiusserverid-notify-config-invalid-notify-cc-that-radius-configuration-is-invalid
+      tags:
+      - RADIUS
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: radiusServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/radius/{rpAppId}/servers/{radiusServerId}/notify/config/applied:
+    post:
+      summary: Notify CC that RADIUS configuration was applied
+      operationId: post-rp-api-radius-rpappid-servers-radiusserverid-notify-config-applied-notify-cc-that-radius-configuration-was-applied
+      tags:
+      - RADIUS
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: rpAppId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: radiusServerId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/radius/integration:
+    get:
+      summary: Get RADIUS integrations
+      operationId: get-rp-api-radius-integration-get-radius-integrations
+      tags:
+      - RADIUS
+      responses:
+        default:
+          description: See HYPR API documentation
+    post:
+      summary: Create a new RADIUS integration
+      operationId: post-rp-api-radius-integration-create-a-new-radius-integration
+      tags:
+      - RADIUS
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/api/radius/integration/{radiusIntConfigId}:
+    delete:
+      summary: Delete a RADIUS integration
+      operationId: delete-rp-api-radius-integration-radiusintconfigid-delete-a-radius-integration
+      tags:
+      - RADIUS
+      responses:
+        default:
+          description: See HYPR API documentation
+      parameters:
+      - name: radiusIntConfigId
+        in: path
+        required: true
+        schema:
+          type: string
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -90,24 +90,90 @@ common:
   url: https://www.hypr.com/trust-center/terms-of-service
 
 apis:
-- aid: hypr:hypr-passwordless-apis
-  name: HYPR Passwordless APIs
-  description: REST APIs for registrations, authentication, user management, RP applications, audit trail and administration on a HYPR Server.
+- aid: hypr:hypr-analytics-api
+  name: HYPR Analytics API
+  description: The Analytics API from HYPR — 14 operation(s) for analytics.
   humanURL: https://apidocs.hypr.com
   baseURL: https://{tenant}.hypr.com
   tags:
-  - Passwordless
-  - Authentication
-  - Identity
+  - Analytics
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/hypr-passwordless-openapi.yml
-    x-ae-authored: true
+    url: openapi/hypr-analytics-api-openapi.yml
   - type: Postman
     url: postman/hypr-passwordless-apis-postman-collection.json
   - type: APIReference
     url: https://apidocs.hypr.com
-
+- aid: hypr:hypr-control-center-api
+  name: HYPR Control Center API
+  description: The Control Center API from HYPR — 77 operation(s) for control center.
+  humanURL: https://apidocs.hypr.com
+  baseURL: https://{tenant}.hypr.com
+  tags:
+  - Control Center
+  properties:
+  - type: OpenAPI
+    url: openapi/hypr-control-center-api-openapi.yml
+  - type: Postman
+    url: postman/hypr-passwordless-apis-postman-collection.json
+  - type: APIReference
+    url: https://apidocs.hypr.com
+- aid: hypr:hypr-fido-api-api
+  name: HYPR FIDO API
+  description: The FIDO API API from HYPR — 3 operation(s) for fido api.
+  humanURL: https://apidocs.hypr.com
+  baseURL: https://{tenant}.hypr.com
+  tags:
+  - FIDO API
+  properties:
+  - type: OpenAPI
+    url: openapi/hypr-fido-api-api-openapi.yml
+  - type: Postman
+    url: postman/hypr-passwordless-apis-postman-collection.json
+  - type: APIReference
+    url: https://apidocs.hypr.com
+- aid: hypr:hypr-fido2-rp-api-api
+  name: HYPR FIDO2 RP API
+  description: The FIDO2 RP API API from HYPR — 13 operation(s) for fido2 rp api.
+  humanURL: https://apidocs.hypr.com
+  baseURL: https://{tenant}.hypr.com
+  tags:
+  - FIDO2 RP API
+  properties:
+  - type: OpenAPI
+    url: openapi/hypr-fido2-rp-api-api-openapi.yml
+  - type: Postman
+    url: postman/hypr-passwordless-apis-postman-collection.json
+  - type: APIReference
+    url: https://apidocs.hypr.com
+- aid: hypr:hypr-radius-api
+  name: HYPR RADIUS API
+  description: The RADIUS API from HYPR — 9 operation(s) for radius.
+  humanURL: https://apidocs.hypr.com
+  baseURL: https://{tenant}.hypr.com
+  tags:
+  - RADIUS
+  properties:
+  - type: OpenAPI
+    url: openapi/hypr-radius-api-openapi.yml
+  - type: Postman
+    url: postman/hypr-passwordless-apis-postman-collection.json
+  - type: APIReference
+    url: https://apidocs.hypr.com
+- aid: hypr:hypr-rp-applications-api
+  name: HYPR RP Applications API
+  description: The RP Applications API from HYPR — 111 operation(s) for rp applications.
+  humanURL: https://apidocs.hypr.com
+  baseURL: https://{tenant}.hypr.com
+  tags:
+  - RP Applications
+  properties:
+  - type: OpenAPI
+    url: openapi/hypr-rp-applications-api-openapi.yml
+  - type: Postman
+    url: postman/hypr-passwordless-apis-postman-collection.json
+  - type: APIReference
+    url: https://apidocs.hypr.com
 x-coverage:
   state: none
   reason: no-developer-program

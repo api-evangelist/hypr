@@ -1,0 +1,174 @@
+openapi: 3.2.0
+info:
+  title: HYPR Passwordless Analytics API
+  version: latest
+  description: 'AE-AUTHORED: derived mechanically from HYPR''s published Postman collection (https://apidocs.hypr.com, documenter collection 20355028/2sA3kPqQAt). Not published by HYPR as OpenAPI. Paths, methods and summaries only; schemas are not asserted.'
+  x-ae-authored: true
+  x-method: derived
+  x-source: postman/hypr-passwordless-apis-postman-collection.json
+servers:
+- url: https://{tenant}.hypr.com
+  variables:
+    tenant:
+      default: your-tenant
+security:
+- bearerAuth: []
+tags:
+- name: Analytics
+paths:
+  /cc/api/bulk/introspect/<entity>:
+    get:
+      summary: Query available entities
+      operationId: get-cc-api-bulk-introspect-entity-query-available-entities
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/stats/application/logins:
+    get:
+      summary: Retrieve application logins
+      operationId: get-cc-api-stats-application-logins-retrieve-application-logins
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/stats/authenticator/modality/logins:
+    get:
+      summary: Retrieve the logins for each modality
+      operationId: get-cc-api-stats-authenticator-modality-logins-retrieve-the-logins-for-each-modality
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/stats/user/logins/total:
+    get:
+      summary: Retrieve the number of user logins
+      operationId: get-cc-api-stats-user-logins-total-retrieve-the-number-of-user-logins
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/versioned/stats/uniqueActiveUsers:
+    get:
+      summary: Retrieve the number of unique active users
+      operationId: get-cc-api-versioned-stats-uniqueactiveusers-retrieve-the-number-of-unique-active-users
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/versioned/stats/authentications:
+    get:
+      summary: Retrieve the number of authentications
+      operationId: get-cc-api-versioned-stats-authentications-retrieve-the-number-of-authentications
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/versioned/rpUser/registered/summary:
+    get:
+      summary: Get the registered user count
+      operationId: get-cc-api-versioned-rpuser-registered-summary-get-the-registered-user-count
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/versioned/rpUser/registered/summary/rpApp:
+    get:
+      summary: Get the registered user count by RP application
+      operationId: get-cc-api-versioned-rpuser-registered-summary-rpapp-get-the-registered-user-count-by-rp-application
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+  /rp/deviceapi/logs:
+    post:
+      summary: Aggregate Logs - Authenticated Mobile
+      operationId: post-rp-deviceapi-logs-aggregate-logs-authenticated-mobile
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/deviceapi/logs/binary:
+    post:
+      summary: Aggregate Logs - Authenticated Mobile (binary)
+      operationId: post-rp-deviceapi-logs-binary-aggregate-logs-authenticated-mobile-binary
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/logs:
+    post:
+      summary: Aggregate logs - Authenticated Workstation
+      operationId: post-rp-wsapi-logs-aggregate-logs-authenticated-workstation
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /rp/wsapi/logs/binary:
+    post:
+      summary: Aggregate Logs - Authenticated Workstation (binary)
+      operationId: post-rp-wsapi-logs-binary-aggregate-logs-authenticated-workstation-binary
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+  /cc/api/throttle/status:
+    get:
+      summary: Obtain a list of throttled endpoints
+      operationId: get-cc-api-throttle-status-obtain-a-list-of-throttled-endpoints
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+  /cc/api/throttle/rescan:
+    post:
+      summary: Rescan for throttling changes
+      operationId: post-cc-api-throttle-rescan-rescan-for-throttling-changes
+      tags:
+      - Analytics
+      responses:
+        default:
+          description: See HYPR API documentation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

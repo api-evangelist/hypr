@@ -1,0 +1,29 @@
+{
+  "provider": "hypr",
+  "sources": [
+    "_ae-authored/hypr-passwordless-openapi.yml"
+  ],
+  "outputs": [
+    "hypr-analytics-api-openapi.yml",
+    "hypr-control-center-api-openapi.yml",
+    "hypr-fido-api-api-openapi.yml",
+    "hypr-fido2-rp-api-api-openapi.yml",
+    "hypr-radius-api-openapi.yml",
+    "hypr-rp-applications-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "hypr-passwordless-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "hypr-passwordless-openapi.yml: declared missing tag: Analytics",
+    "hypr-passwordless-openapi.yml: declared missing tag: Control Center",
+    "hypr-passwordless-openapi.yml: declared missing tag: FIDO API",
+    "hypr-passwordless-openapi.yml: declared missing tag: FIDO2 RP API",
+    "hypr-passwordless-openapi.yml: declared missing tag: RADIUS",
+    "hypr-passwordless-openapi.yml: declared missing tag: RP Applications",
+    "apis.yml register: written (+6 apis, 6 total)"
+  ],
+  "skipped": []
+}
